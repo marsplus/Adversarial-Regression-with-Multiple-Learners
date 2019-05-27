@@ -10,8 +10,8 @@ Currently, you can use this code to replicate the experimental results for **red
 1. First, clone the project folder to your computer.
 2. Then, create an environment and activate it:
   ```
-  conda create -n ICML2018_multiple python=3.7
-  conda activate ICML2018_multiple
+  conda create -n multiple-learner python=3.7
+  conda activate multiple-learner
   ```
 3. After the environment is activated, install the following required packages:
    ```
