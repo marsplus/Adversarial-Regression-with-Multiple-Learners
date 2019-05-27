@@ -47,17 +47,17 @@ def plot_incomplete_information(dataset, estimateZ):
         ret.append(data)
     ret = pd.concat(ret)
 
-    game = ret.groupby(['type', 'Lambda']).mean().values[:13, :]
-    normal = ret.groupby(['type', 'Lambda']).mean().values[13:2*13, :]
-    lasso = ret.groupby(['type', 'Lambda']).mean().values[2*13:3*13, :]
-    ridge = ret.groupby(['type', 'Lambda']).mean().values[3*13:, :]
+    MLSG = ret[ret['type'].isin(['MLSG'])].groupby('Lambda').mean()
+    OLS = ret[ret['type'].isin(['OLS'])].groupby('Lambda').mean()
+    Lasso = ret[ret['type'].isin(['Lasso'])].groupby('Lambda').mean()
+    Ridge = ret[ret['type'].isin(['Ridge'])].groupby('Lambda').mean()
 
     xticks = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
     yticks = [0.1, 0.3, 0.5, 0.7, 0.9, 1.1, 1.3, 1.5, 2, 4, 6, 8, 10]
-    min_value = np.min((np.min(game), np.min(normal)))
-    max_value = np.max((np.min(game), np.max(normal)))
+    min_value = np.min((np.min(MLSG), np.min(OLS)))
+    max_value = np.max((np.min(MLSG), np.max(OLS)))
 
-    ax = seaborn.heatmap(game, cmap="OrRd", xticklabels=xticks, yticklabels=yticks, vmin=min_value, vmax=max_value)
+    ax = seaborn.heatmap(MLSG, cmap="OrRd", xticklabels=xticks, yticklabels=yticks, vmin=min_value, vmax=max_value)
     ax.set_xlabel(r'$\mathbf{\beta}$', fontsize=50)
     ax.set_ylabel(r'$\mathbf{\lambda}$', rotation=45, fontsize=50)
     # ax.xaxis.set_major_formatter(matplotlib.ticker.FormatStrFormatter('%.2f'))
@@ -68,7 +68,7 @@ def plot_incomplete_information(dataset, estimateZ):
     plt.show()
 
 
-    ax = seaborn.heatmap(normal, cmap="OrRd", xticklabels=xticks, yticklabels=yticks, vmin=min_value, vmax=max_value)
+    ax = seaborn.heatmap(OLS, cmap="OrRd", xticklabels=xticks, yticklabels=yticks, vmin=min_value, vmax=max_value)
     ax.set_xlabel(r'$\mathbf{\beta}$', fontsize=50)
     ax.set_ylabel(r'$\mathbf{\lambda}$', rotation=45, fontsize=50)
     # ax.xaxis.set_major_formatter(matplotlib.ticker.FormatStrFormatter('%.2f'))
@@ -80,7 +80,7 @@ def plot_incomplete_information(dataset, estimateZ):
 
 
 
-    ax = seaborn.heatmap(lasso, cmap="OrRd", xticklabels=xticks, yticklabels=yticks, vmin=min_value, vmax=max_value)
+    ax = seaborn.heatmap(Lasso, cmap="OrRd", xticklabels=xticks, yticklabels=yticks, vmin=min_value, vmax=max_value)
     ax.set_xlabel(r'$\mathbf{\beta}$', fontsize=50)
     ax.set_ylabel(r'$\mathbf{\lambda}$', rotation=45, fontsize=50)
     # ax.xaxis.set_major_formatter(matplotlib.ticker.FormatStrFormatter('%.2f'))
@@ -90,7 +90,7 @@ def plot_incomplete_information(dataset, estimateZ):
     plt.savefig('../result/%s_%s_Lasso.pdf' % (dataset, estimateZ))
     plt.show()
 
-    ax = seaborn.heatmap(ridge, cmap="OrRd", xticklabels=xticks, yticklabels=yticks, vmin=min_value, vmax=max_value)
+    ax = seaborn.heatmap(Ridge, cmap="OrRd", xticklabels=xticks, yticklabels=yticks, vmin=min_value, vmax=max_value)
     ax.set_xlabel(r'$\mathbf{\beta}$', fontsize=50)
     ax.set_ylabel(r'$\mathbf{\lambda}$', rotation=45, fontsize=50)
     # ax.xaxis.set_major_formatter(matplotlib.ticker.FormatStrFormatter('%.2f'))
