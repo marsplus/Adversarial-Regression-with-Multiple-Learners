@@ -1,7 +1,7 @@
 # Adversarial Regression with Multiple Learners
 
 ### Overview
-Currently, you can use this code to replicate the experimental results for **redwine** dataset (Figure 1, Figure 2, etc). The  experimental results for other datasets can be similarly generated. 
+Currently, you can use this code to replicate the experimental results for **redwine** dataset (Figure 1, Figure 2, and Figure 7). The  experimental results for other datasets can be similarly generated. 
 
 
 ### Installation
