@@ -27,12 +27,12 @@ Currently, you can use this code to replicate the experimental results for **red
 mkdir result/
 ```
 
-2.  Enter into **src/** folder, run the following command to generate experimental outputs:
+2.  Enter into src/ folder, run the following command to generate experimental outputs:
 ```
 ./run_exp.sh
 ```
 
-3. Insider **src/** folder, run the following command to generate Figure 1 (complete information), Figure 2 (incomplete information + over-estimatd z), and Figure 3 (incomplete information + under-estimated z):
+3. Insider src/ folder, run the following command to generate Figure 1 (complete information), Figure 2 (incomplete information + over-estimatd z), and Figure 3 (incomplete information + under-estimated z):
 ```
 python plot.py redwine
 ```
