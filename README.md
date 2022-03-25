@@ -47,8 +47,8 @@ libc++abi.dylib: terminating with uncaught exception of type NSException
 @inproceedings{tong2018adversarial,
   title={Adversarial Regression with Multiple Learners},
   author={Tong, Liang and Yu, Sixie and Alfeld, Scott and others},
-  booktitle={International Conference on Machine Learning},
-  pages={4953--4961},
+  booktitle={Proceedings of the 35th International Conference on Machine Learning (ICML)},
+  pages={4946--4954},
   year={2018}
 }
 ```
