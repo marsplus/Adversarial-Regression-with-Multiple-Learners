@@ -1,5 +1,5 @@
 # Adversarial Regression with Multiple Learners
-
+## This is the repository to reproduce the experimental results reported in the paper [Adversarial Regression with Multiple Learners](https://arxiv.org/abs/1806.02256) appeared in ICML 2018.
 ### Overview
 Currently, you can use this code to replicate the experimental results for **redwine** dataset (Figure 1, Figure 2, and Figure 7). The  experimental results for other datasets can be similarly generated. 
 
